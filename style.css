@@ -37,8 +37,9 @@ h1 {
 }
 
 
-
+/*  style="max-width:300px;float:right" */
 .image-cropper {
+    max-width: 300px;
     width: 100px;
     height: 100px;
     position: relative;
