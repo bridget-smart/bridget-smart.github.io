@@ -38,7 +38,7 @@ h1 {
 
 
 /*  style="max-width:300px;float:right" */
-.image-cropper {
+/* .image-cropper {
     max-width: 300px;
     width: 100px;
     height: 100px;
@@ -50,4 +50,11 @@ h1 {
   margin: 0 auto;
   width: auto;
   height: 100%;
+} */
+   
+.rounded-circle{
+   border:1px solid;
+   border-radius:50%;
+   width:50px;
+   height:50px;
 }
