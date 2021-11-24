@@ -36,14 +36,16 @@ h1 {
     color: crimson;
 }
 
-.circular--landscape {
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 50%;
-}
 
-.circular--landscape img {
+.image-cropper {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+
+.circular--landscape {
+  margin: 0 auto;
   width: auto;
   height: 100%;
 }
