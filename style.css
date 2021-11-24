@@ -38,7 +38,7 @@ h1 {
 .circular--landscape {
   display: inline-block;
   position: relative;
-  width: 300px;
+  width: 200px;
   height: 200px;
   overflow: hidden;
   border-radius: 50%;
