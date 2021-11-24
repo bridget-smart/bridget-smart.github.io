@@ -1,3 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+   font-family: 'Open Sans',serif;
+   padding-top: 70px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+}
+
+
+
 h1 {
-  color: crimson;
+  color: black;
+}
+
+
+h1 {
+  color: black;
+}
+
+ /*For the little link icons */
+.icon{ 
+    font-size: 2.5rem;
+}
+.icon:hover{ 
+    color: #A31F34;
 }
