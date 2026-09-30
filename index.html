@@ -3,72 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Academic portfolio of Bridget Smart">
     <title>Bridget Smart</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description" content="Bridget Smart is a Rhodes Scholar and DPhil candidate in Mathematics at the University of Oxford, building interpretable models of structure and memory in complex systems.">
+    <meta property="og:title" content="Bridget Smart">
+    <meta property="og:description" content="Mathematics DPhil candidate at the University of Oxford, building interpretable models of structure and memory in complex systems.">
+    <meta property="og:image" content="https://bridgetsmart.com/images/bridget.jpg">
+    <meta property="og:url" content="https://bridgetsmart.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-
-    <header>
+    <header id="site-header">
         <div class="name-social">
             <h1>Bridget Smart</h1>
-            <div class="link-icons" style="font-size: 2rem;">
-                <a href="https://au.linkedin.com/in/bridgetsmart/"><i class="fab fa-linkedin fa-fw"></i></a>
-                <a href="https://github.com/bridget-smart"><i class="fab fa-github fa-fw"></i></a>
-                <a href="https://scholar.google.com/citations?user=ew4BxEcAAAAJ&hl=en"><i class="ai ai-google-scholar-square ai-fw"></i></a>
-                <a href="https://www.inet.ox.ac.uk/people/bridget-smart/"><i class="fa-solid fa-building-columns fa-fw" style="font-size: 1.9rem"></i></a>
-                <a href="https://www.maths.ox.ac.uk/people/bridget.smart"><i class="fa-solid fa-cubes fa-fw" style="font-size: 1.9rem"></i></a>
+            <div class="link-icons">
+                <a href="https://au.linkedin.com/in/bridgetsmart/" aria-label="LinkedIn"><i class="fab fa-linkedin fa-fw"></i></a>
+                <a href="https://github.com/bridget-smart" aria-label="GitHub"><i class="fab fa-github fa-fw"></i></a>
+                <a href="https://scholar.google.com/citations?user=ew4BxEcAAAAJ&hl=en" aria-label="Google Scholar"><i class="ai ai-google-scholar-square ai-fw"></i></a>
+                <a href="https://www.inet.ox.ac.uk/people/bridget-smart/" aria-label="INET Oxford"><i class="fa-solid fa-building-columns fa-fw"></i></a>
+                <a href="https://www.maths.ox.ac.uk/people/bridget.smart" aria-label="Mathematical Institute, Oxford"><i class="fa-solid fa-cubes fa-fw"></i></a>
             </div>
         </div>
         <div class="divider"></div>
     </header>
-    
+
+    <div class="container">
+
     <section id="about-me">
         <div class="about-text">
             <p>
-                Bridget is a Rhodes Scholar pursuing a DPhil in Mathematics at the University of Oxford, supervised by Professor Renaud Lambiotte and Professor Doyne Farmer. 
-                <br><br>
-                Her research is focused on developing theoretical tools grounded in information science and network science to model, characterise and assess uncertainty in complex real-world systems. 
-                Bridget applies the outcomes of her research to gain meaningful insights into many systems; currently, she is working to improve prediction quality for economic models and designing better tools to measure temporal relationships in online social networks.
+                Bridget is a Rhodes Scholar and DPhil candidate in Mathematics at the University of Oxford, supervised by Professor Renaud Lambiotte and Professor J. Doyne Farmer. She is affiliated with the Mathematical Institute  and the Institute for New Economic Thinking at the Oxford Martin School. 
             </p>
-            </div>
-        <img class="profile-img" src="images/bridget_square.png" alt="Me">
+            <p>
+                Her work is motivated by social dynamics that emerge from interactions between people, technologies, institutions, and their environments. These range from how information spreads and shapes beliefs on social media to how individual decisions produce collective outcomes in prediction markets. She develops mathematical methods for understanding the mechanisms behind these complex dynamics, with the goal of building models that are both mathematically meaningful and useful in practice.
+        </div>
+        <img class="profile-img" src="images/bridget.jpg" alt="Bridget Smart" width="360" height="360">
     </section>
 
-    <section id="projects">
-        <h3>About me</h3>
-        <div class="projects-text">
-            <p>
-                Before moving to the UK, I was based at The University of Adelaide where my research focused on modelling and measuring information flows on online social networks. 
-                <br><br>
-                I started this research as a Westpac Future Leaders Scholar while studying for my MPhil in Applied Mathematics and Statistics. My thesis titled "Measuring and modelling information flows in real-world networks" was awarded the Dean’s Commendation for Research Thesis Excellence. 
-                <br><br>
-                Through my research, I am passionate about working with policy and decision-makers, sharing the outcomes of my work to improve our capacity to engage in complex settings. 
-                In 2021, I co-authored the Youth National Security Strategy, check it out <a href="https://strategy.ynss.org">here</a>.
+    <section id="research">
+        <h2>Research</h2>
+
+        <article class="project">
+            <figure class="project-fig">
+                <a href="images/separable-markov.svg"><img src="images/separable-markov.svg" alt="A path through a network, with arrows showing a sequence of steps from node to node."></a>
+            </figure>
+            <div class="project-text">
+                <h3>Untangling memory and influence in complex systems</h3>
+                <p>
+                    Predicting sequences of movements, interactions or events means accounting for both memory (how the past shapes what happens next) and structure (who or what can interact). Higher-order Markov modelscapture memory, but their state space grows exponentially and they quickly become hard to interpret. This project develops the Separable Markov model, a compact and interpretable alternative for settings with long-range memory and limited data.
+                </p>
+                <p class="links"><a href="https://www.networkscienceinstitute.org/talks/bridget-smart">Watch the talk &#8599;</a> <span class="meta">Network Science Institute, Northeastern University, 2025</span></p>
             </div>
+        </article>
+
+        <article class="project flip">
+            <figure class="project-fig">
+                <a href="images/cross-correlogram.png"><img src="images/cross-correlogram.png" loading="lazy" alt="Simulated source and target event streams with daily cycles. A naive null model mistakes periodic structure for interaction, while a null model that accounts for periodicity isolates the true one-hour delayed response."></a>
+            </figure>
+            <div class="project-text">
+                <h3>Inferring temporal dependencies from social time series</h3>
+                <p>
+                    Human interactions are bursty and follow daily rhythms. This makes it extremely difficult to tell whether one event tends to trigger another, or whether they simply happen at similar times. This work adapts the cross-correlogram, a method from neuroscience, to distinguish lagged dependencies from correlations driven by bursty or rhythmic activity. Applied to 3.1 million posts on X, our method recovers known television broadcast schedules.
+                </p>
+                <p class="links"><a href="https://arxiv.org/abs/2609.16633">arXiv preprint &#8599;</a> <span class="meta">with R. Lambiotte, T. Aoki and R. Kobayashi, 2026</span></p>
+            </div>
+        </article>
+
+        <article class="project">
+            <figure class="project-fig">
+                <a href="images/prediction-market.png"><img src="images/prediction-market.png" loading="lazy" alt="Diagram of the agent-based model: betting agents form beliefs from a voting population and the market price, and trade through an order book that sets the prediction-market price."></a>
+            </figure>
+            <div class="project-text">
+                <h3>Manipulation in prediction markets</h3>
+                <p>
+                    Prediction markets are sometimes interpreted as predictions of how likely a future event is to occur. Using a simple model of a prediction market, this work shows that a single trader with sufficient capital can manipulate prices. The key result is that biased traders can temporarily shift market prices, with the magnitude and duration of this distortion increasing if other traders herd toward the market price or are slow to update their internal valuations.
+                </p>
+                <p class="links"><a href="https://arxiv.org/abs/2601.20452">arXiv preprint &#8599;</a> <span class="meta">with E. Mark, A. Bastian and J. Waugh, 2026</span></p>
+            </div>
+        </article>
+
+        <article class="project flip">
+            <figure class="project-fig">
+                <a href="images/bots-infoflow.png"><img src="images/bots-infoflow.png" loading="lazy" alt="Network of information flow between pro-Ukraine, pro-Russia and balanced account types, including bots and non-bots. Arrow width shows the strength of flow."></a>
+            </figure>
+            <div class="project-text">
+                <h3>Bots, humans and information flow online</h3>
+                <p>
+                    In the first weeks of the 2022 Russian invasion of Ukraine, we used information-theoretic estimators, network science and natural language processing methods to measure influence between bot and human accounts on Twitter.
+                </p>
+                <p class="links"><a href="https://doi.org/10.1007/978-3-031-19097-1_3">Paper &#8599;</a> <a href="https://doi.org/10.6084/m9.figshare.20486910.v5">Dataset &#8599;</a> <span class="meta">with J. Watt, S. Benedetti, L. Mitchell and M. Roughan, 2022 </span></p>
+            </div>
+        </article>
     </section>
 
-    <section id="publications">
-        <h1>Recent highlights</h1>
-        <div class="talks-text">
+    <section id="highlights">
+        <h2>Recent highlights</h2>
+        <ul class="news">
+            <li><span class="date">2026</span><span>New preprint on <a href="https://arxiv.org/abs/2609.16633">inferring temporal dependencies with the cross-correlogram</a>, with collaborators from Oxford, the University of Tokyo and Shiga University.</span></li>
+            <li><span class="date">2026</span><span>Attended the Complexity Science Hub Policy Workshop (May).</span></li>
+            <li><span class="date">2026</span><span>Preprint on <a href="https://arxiv.org/abs/2601.20452">manipulation in prediction markets</a>.</span></li>
+            <li><span class="date">2025</span><span>Attended the Santa Fe Institute's Postdocs in Complexity conference and a working group on prediction markets.</span></li>
+            <li><span class="date">2025</span><span>Visiting researcher at the Complexity &amp; Society Lab, Northeastern University, with an <a href="https://www.networkscienceinstitute.org/talks/bridget-smart">invited talk</a> at the Network Science Institute.</span></li>
+            <li><span class="date">2025</span><span><a href="https://arxiv.org/abs/2510.13330">LCSFinder</a>: a faster algorithm for non-parametric entropy estimation in sequential data.</span></li>
+        </ul>
+    </section>
+
+    <section id="beyond">
+        <h2>Beyond research</h2>
+        <div class="beyond-text">
             <p>
-                Recently, I was a visiting researcher at the Complexity & Society Lab at the Network Science Institute in NorthEastern in Boston, where I  <a href="https://www.networkscienceinstitute.org/talks/bridget-smart"> spoke about my recent work</a>  on generating dynamics with memory on networks.
-                <br><br>
-                I was in Santa Fe for the Postdocs in Complexity Conference and a micro-working group looking at prediction markets, a project which spun out of the 2024 Complexity Global School, preprint coming soon!
-                <br><br>
-                In my work looking at economies and financial markets, I'm looking at how we can predict temporal signals while overcoming the bias-variance trade-off with collaborators from INET Oxford. I was an invited speaker at the YSI Focus Session at NetSci 2024 where I spoke about information theoretic estimators in finance. 
-                <br><br>
-                If you’re interested in my work on online social networks, you can hear me discuss mis- and dis-information <a href="https://www.therandomsample.com.au/podcast/social-media-mis-disinformation/"> on this podcast!</a> Also check out my recent <a href="https://arxiv.org/abs/2510.13330"> preprint</a> on a more efficient method to estimate LCS for entropy estimation. 
+                Before Oxford, Bridget completed an MPhil in Applied Mathematics and Statistics at the University of Adelaide as a Westpac Future Leaders Scholar. Her thesis on measuring and modelling information flows in real-world networks received the Dean’s Commendation for Thesis Excellence.
+            </p>
+            <p>
+                She enjoys teaching probability, statistics, graph theory and information theory at Oxford and is a Non-Stipendiary Lecturer at New College. Bridget is committed to creating a diverse, welcoming and engaged STEM community.
+            </p>
+            <p>
+                She enjoys sharing research beyond academia. She contributed to the <a href="https://strategy.ynss.org">Youth National Security Strategy</a> and has spoken about mis- and disinformation <a href="https://www.therandomsample.com.au/podcast/social-media-mis-disinformation/">on this podcast</a>.
             </p>
         </div>
-        </section>
+    </section>
 
     </div>
- 
+
     <footer>
         <div class="footer-content">
             <p>If you'd like to chat more about complexity, uncertainty or using mathematics to model complex systems, get in touch!</p>
@@ -76,6 +133,4 @@
     </footer>
     <script src="script.js"></script>
 </body>
-
-
-                                      
+</html>

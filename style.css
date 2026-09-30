@@ -1,4 +1,4 @@
-@font-face {    
+@font-face {
     font-family: 'OpenSauceSans-Regular';
     src: url('fonts/OpenSauceSans-Regular.ttf') format('truetype');
     font-weight: 100;
@@ -15,7 +15,7 @@
     src: url('fonts/OpenSauceOne-Bold.ttf') format('truetype');
     font-weight: 800;
 }
-@font-face {    
+@font-face {
     font-family: 'OpenSauceSans-Italic';
     src: url('fonts/OpenSauceSans-Italic.ttf') format('truetype');
     font-weight: 200;
@@ -23,9 +23,9 @@
 
 /* General Styles */
 html {
-    height: 100%;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -34,50 +34,39 @@ body {
     padding: 0;
     background-color: white;
     color: #333;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr;
-    height: 100vh;
     font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 /* Container to limit content width */
 .container {
-    max-width: 900px; /* Adjust to your preference */
+    max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
 }
 
-/* Add formatting for hyperlinks */
 a {
     color: rgb(72, 107, 223);
     text-decoration: none;
 }
 
-/* hover color */
 a:hover {
     color: rgb(0, 42, 181);
 }
 
-/* Header */
+/* ---------- Header (sticky, shrinks on scroll) ---------- */
 header {
-    grid-row: 1;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: 'OpenSauceOne-SemiBold', sans-serif;
-    padding: 40px 20px 20px; /* Larger top padding */
-    position: relative;
-    font-size: 1.6rem;
-}
-
-header.sticky {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-    transition: all 0.3s ease-in-out;
+    padding: 40px 20px 0;
+    transition: padding 0.3s ease;
 }
 
 .name-social {
@@ -85,7 +74,10 @@ header.sticky {
 }
 
 .name-social h1 {
-    font-size: 2em;
+    font-size: 3.2rem;
+    line-height: 1.2;
+    margin: 0.5rem 0 0;
+    transition: font-size 0.3s ease, margin 0.3s ease;
 }
 
 .link-icons {
@@ -93,95 +85,133 @@ header.sticky {
     justify-content: center;
     gap: 1.1rem;
     margin-top: 1rem;
+    font-size: 2rem;              /* icons keep this size when the header shrinks */
+    transition: margin 0.3s ease;
 }
 
-.link-icons a {
-    color: rgb(72, 107, 223);
-}
-
-.link-icons a:hover {
-    color: rgb(0, 42, 181);
-}
+.link-icons a { color: rgb(72, 107, 223); }
+.link-icons a:hover { color: rgb(0, 42, 181); }
+.link-icons .fa-building-columns,
+.link-icons .fa-cubes { font-size: 0.95em; }
 
 /* Divider */
 .divider {
     height: 1px;
     background-color: #ced1d2;
     width: 100%;
-    margin: 60px 0px 0px 0px;
+    max-width: 960px;
+    margin: 50px 0 0;
+    transition: margin 0.3s ease;
 }
 
-/* About Me Section */
+/* Scrolled state: smaller name, tighter spacing, same icon size */
+header.shrunk { padding-top: 10px; }
+header.shrunk .name-social h1 { font-size: 1.6rem; margin: 0; }
+header.shrunk .link-icons { margin-top: 0.4rem; }
+header.shrunk .divider { margin-top: 12px; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    header, .name-social h1, .link-icons, .divider { transition: none; }
+}
+
+/* ---------- Section headings ---------- */
+section { padding: 20px; }
+
+section h2 {
+    font-family: 'OpenSauceOne-SemiBold', sans-serif;
+    font-size: 1.9rem;
+    margin: 0 0 24px;
+}
+
+/* ---------- About me ---------- */
 #about-me {
-    grid-row: 2;
     display: grid;
     grid-template-columns: 0.8fr 0.7fr;
     gap: 30px;
-    padding: 20px;
+    padding-top: 40px;
     align-items: center;
-    justify-content: center;
 }
 
-.about-text {
-    margin: 0;
-    max-width: 100%;
-}
+.about-text p { margin: 0 0 1em; }
 
 .profile-img {
     border-radius: 50%;
     object-fit: cover;
+    width: 80%;
     max-width: 100%;
     height: auto;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
+    justify-self: center;
+}
+
+/* ---------- Research projects ---------- */
+#research { padding-top: 48px; }
+
+.project {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 40px;
     align-items: center;
-    max-inline-size: 80%;
-    flex: 1;
-    padding: 3.5%;
+    margin-bottom: 64px;
 }
 
-/* Projects Section */
-#projects {
-    grid-row: 3;
-    padding: 20px;
+.project.flip .project-fig { order: 2; }
+
+.project-fig {
+    margin: 0;
+    background: white;
+    border: 1px solid #e2e4ea;
+    border-radius: 12px;
+    padding: 16px;
+    aspect-ratio: 4 / 3;
+    max-width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Left align heading */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
 }
 
-#projects h1 {
-    margin: 0 0 10px; /* Space below heading */
+.project-fig:hover { box-shadow: 0 8px 24px rgba(20, 30, 70, 0.12); }
+.project-fig a { display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; cursor: zoom-in; }
+.project-fig img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+.project-text { min-width: 0; }
+
+.project h3 {
+    font-family: 'OpenSauceOne-SemiBold', sans-serif;
+    font-size: 1.35rem;
+    line-height: 1.3;
+    margin: 0 0 12px;
 }
 
-/* Talks section */
-#talks {
-    grid-row: 3;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Left align heading */
+.project-text p { margin: 0 0 12px; }
+
+.links { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; }
+.links a { font-family: 'OpenSauceOne-SemiBold', sans-serif; }
+.meta { color: #6b6f78; font-size: 0.9rem; }
+
+
+/* ---------- Recent highlights ---------- */
+.news { list-style: none; margin: 0; padding: 0; }
+
+.news li {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e6e8ec;
 }
 
-#talks h1 {
-    margin: 0 0 10px; /* Space below heading */
-}
+.news li:last-child { border-bottom: none; }
+.date { color: #6b6f78; font-family: 'OpenSauceOne-SemiBold', sans-serif; font-variant-numeric: tabular-nums; }
 
-/* Publications Section */
-#publications {
-    grid-row: 3;
-    padding: 20px;
-    margin-bottom: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Left align heading */
-}
+/* ---------- Beyond research ---------- */
+#beyond { padding-top: 40px; margin-bottom: 80px; }
+.beyond-text p { margin: 0 0 1em; max-width: 70ch; }
 
-#publications h1 {
-    margin: 0 0 10px; /* Space below heading */
-}
-
-
-
-/* Footer will remain full width */
+/* ---------- Footer ---------- */
 footer {
     background-color: rgb(231, 232, 238);
     padding: 20px;
@@ -189,21 +219,20 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Mobile Responsiveness */
+/* ---------- Mobile ---------- */
 @media (max-width: 768px) {
-    header {
-        text-align: center;
-    }
+    header { padding-top: 24px; }
+    .name-social h1 { font-size: 2.4rem; }
+    .divider { margin-top: 28px; }
+    header.shrunk .name-social h1 { font-size: 1.3rem; }
 
-    /* Move image below the divider and center text */
-    #about-me {
-        grid-template-columns: 1fr;
-        text-align: left;
-    }
+    section { padding-left: 0; padding-right: 0; }
 
-    .profile-img {
-        order: -1; /* Move image above text */
-        margin-bottom: 20px;
-        margin-left: 1.7rem;
-    }
+    #about-me { grid-template-columns: 1fr; }
+    .profile-img { order: -1; width: 60%; }
+
+    .project { grid-template-columns: 1fr; gap: 20px; margin-bottom: 48px; }
+    .project.flip .project-fig { order: 0; }
+
+    .news li { grid-template-columns: 52px 1fr; gap: 12px; }
 }
